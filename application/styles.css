@@ -1,0 +1,919 @@
+/* -------------------------------------------- */
+/*                     Font                     */
+/* -------------------------------------------- */
+@font-face {
+    font-family: Futura;
+    src: url(../font/Futura_Heavy_font.ttf);
+}
+
+/* -------------------------------------------- */
+/*           Gestion des scrollbars             */
+/* -------------------------------------------- */
+
+::-webkit-scrollbar {
+    width: 14px;
+    height: 14px;
+}
+
+::-webkit-scrollbar-thumb {
+    border: solid 0 transparent;
+    border-right-width: 4px;
+    -webkit-border-radius: 5px;
+    -webkit-border-top-right-radius: 9px 5px;
+    -webkit-border-bottom-right-radius: 9px 5px;
+    -webkit-box-shadow: inset 0 0 0 6px rgba(150, 150, 150, 0.2);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    -webkit-box-shadow: inset 0 0 0 6px rgba(190, 190, 190, 0.2);
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+    border-right-width: 0;
+    border-bottom-width: 4px;
+    -webkit-border-top-right-radius: 5px;
+    -webkit-border-bottom-right-radius: 5px 9px;
+    -webkit-border-bottom-left-radius: 5px 9px;
+}
+
+::-webkit-scrollbar-corner {
+    background-color: #1C1C1C;
+}
+
+/* -------------------------------------------- */
+/*         Dimensions pour HTML - BODY          */
+/* -------------------------------------------- */
+
+html {
+    height: 100%;
+    width: 100%;
+    background-color: #485159;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+}
+
+/* -------------------------------------------- */
+/*         CrÃ©ation de la page d'acceuil       */
+/* -------------------------------------------- */
+#page_acceuil {
+    overflow: hidden;
+    position: absolute;
+    z-index: 5;
+    height: 100%;
+    width: 100%;
+}
+
+#page_acceuil video {
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+}
+
+#page_acceuil .container_language {
+    position: absolute;
+    top: 10px;
+    right: 150px;
+    z-index: 200000;
+}
+
+#page_acceuil .container_language img {
+    display: inline-block;
+    margin: 0px 10px;
+    cursor: pointer;
+}
+
+#page_acceuil figure {
+    position: absolute;
+    top: 0%;
+    left: 17.5%;
+    margin: 0px;
+}
+
+#page_acceuil figure img {
+    height: 692px;
+    width: 1229px;
+}
+
+#page_acceuil p {
+    position: absolute;
+    top: 52%;
+    left: 30%;
+    font-size: 25px;
+    font-family: Futura;
+    color: white;
+}
+
+#page_acceuil button {
+    position: absolute;
+    top: 75%;
+    left: 44%;
+    height: 55px;
+    width: 250px;
+    border: none;
+    border-radius: 8px;
+    background-color: #4CAF50;
+    font-size: 21px;
+    font-family: Futura;
+    color: white;
+    cursor: pointer;
+    outline: none;
+}
+
+#page_acceuil button:hover {
+    box-shadow: 0px 0px 6px 2px #4CAF50;
+}
+
+/* -------------------------------------------- */
+/*         CrÃ©ation de l'acceuil global        */
+/* -------------------------------------------- */
+
+#acceuil_global {
+    display: none;
+    position: absolute;
+    z-index: 4;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    filter: blur(5px);
+}
+
+#acceuil_global video {
+    position: absolute;
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+    filter: blur(4px);
+}
+
+/* -------------------------------------------- */
+/*                    Acceuil 1                 */
+/* -------------------------------------------- */
+
+#acceuil {
+    position: absolute;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+}
+
+#acceuil figure {
+    margin-top: 10%;
+    margin-left: 30%;
+}
+
+#acceuil figure img {
+    height: 160px;
+}
+
+#acceuil section {
+    margin-top: 100px;
+}
+
+#acceuil span {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    font-family: Futura;
+    font-size: 40px;
+    color: white;
+}
+
+#acceuil select {
+    height: 50px;
+    width: 250px;
+    margin-left: 15%;
+    border-left: 4px solid #434950;
+    border-top: none;
+    border-right: 4px solid #434950;
+    border-bottom: none;
+    border-radius: 4px;
+    outline: none;
+}
+
+#boutonSuivant {
+    display: none;
+    float: right;
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    cursor: pointer;
+}
+
+.boutonNiveau {
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.boutonNiveau:hover {
+    box-shadow: 0px 4px 3px 1px rgba(49, 47, 47, 0.75);
+    transition: 0.2s;
+}
+
+/* -------------------------------------------- */
+/*                    Acceuil 2                 */
+/* -------------------------------------------- */
+
+#acceuil2 {
+    display: none;
+    position: absolute;
+    width: 100%;
+    z-index: 3;
+    top: 400px;
+}
+
+#acceuil2 p {
+    margin-top: 50px;
+    margin-left: 41%;
+    font-family: Futura;
+    font-size: 25px;
+    color: white;
+}
+
+#acceuil2 button {
+    height: 50px;
+    width: 250px;
+    margin-top: 60px;
+    border: none;
+    border-radius: 2px 2px 2px 2px;
+    font-family: Futura;
+    font-size: 21px;
+    color: white;
+    cursor: pointer;
+}
+
+#acceuil2 button:focus {
+    outline: none;
+}
+
+.niv_1 {
+    background-color: #4CAF50;
+    margin-left: 35%;
+}
+
+.niv_2 {
+    background-color: #f44336;
+    margin-left: 5%;
+}
+
+/* -------------------------------------------- */
+/*                    Sponso                 */
+/* -------------------------------------------- */
+
+#acceuil_global #sponso {
+    position: absolute;
+    bottom: 0px;
+    left: 4px;
+    margin: 0px;
+}
+
+#acceuil_global #sponso a {color: transparent;}
+
+#acceuil_global #sponso img {
+    height: 50px;
+    margin: 0px 10px;
+    cursor: pointer;
+}
+
+.popup_apropos {
+    display: none;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    background-color: #485159;
+    color: white;
+    font-family: Futura;
+}
+
+.popup_apropos h1 {font-size: 40px;}
+
+.popup_apropos .photos {
+    display: inline-block;
+    margin: 100px 50px;
+}
+
+.popup_apropos .photos img {
+    width: 200px;
+    height: 200px;
+}
+
+.popup_apropos .photos span {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.popup_apropos p {
+    width: 950px;
+    text-align: justify;
+    font-size: 20px;
+}
+
+/* -------------------------------------------- */
+/*             CrÃ©ation de l'appli              */
+/* -------------------------------------------- */
+
+#conteneur {
+    display: none;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    margin: 0px auto;
+    background-color: #485159;
+}
+
+#partie_G {
+    float: left;
+    height: 100%;
+    width: 50%;
+    font-size: 15px;
+    font-family: Futura;
+    color: white;
+}
+
+#conteneur_logo {
+    overflow: hidden;
+    margin: 0px auto;
+    height: 11.5%;
+    width: 95%;
+    border-radius: 2px 2px 2px 2px;
+    font-size: 40px;
+}
+
+#conteneur_logo img {
+    margin-top: 5px;
+    margin-left: 10px;
+}
+
+textarea {
+    overflow: auto;
+    margin-left: 20px;
+    height: 60%;
+    width: 95%;
+    background-color: #1C1C1C;
+    border: none;
+    border-radius: 2px 2px 2px 2px;
+    color: white;
+    resize: none;
+}
+
+textarea:focus {
+    outline: none;
+}
+
+#index {
+    position: absolute;
+    z-index: 5;
+    /*display: none;*/
+    height: 16px;
+    bottom: 15px;
+    left: 23px;
+    width: 48.7%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#index figure {
+    position: absolute;
+    bottom: 0px;
+    height: 16px;
+    width: 100%;
+    margin: 0px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0px 2px 5px 0px black;
+}
+
+#index ul {
+    display: none;
+    padding: 0px;
+    margin-left: 75px;
+}
+
+#index .fonction_index {
+    list-style: none;
+    margin-left: 5px;
+}
+
+#index ul li {
+    margin-top: 20px;
+    font-size: 19px;
+}
+
+#conteneur_bouton_G {
+    overflow: hidden;
+    margin: 0px auto;
+    height: 8%;
+    width: 95%;
+    border-radius: 2px 2px 2px 2px;
+}
+
+#conteneur_bouton_G img {
+    margin-left: 17%;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+#conteneur_table {
+    overflow: auto;
+    margin: 0px 20px;
+    height: 18%;
+    width: 97%;
+    background-color: #1C1C1C;
+    border-radius: 2px 2px 2px 2px;
+}
+
+table {
+    height: 100%;
+    width: auto;
+    font-size: 25px;
+    text-align: left;
+    margin-left: 15%;
+}
+
+th {
+    width: 186px;
+}
+
+input[type="range"] {
+    display: block;
+    -webkit-appearance: none;
+    background-color: #BDC3C7;
+    height: 5px;
+    width: 90px;
+    border-radius: 5px;
+    outline: 0;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background-color: #485159;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    border: 2px solid white;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+    background-color: white;
+    border: 2px solid #485159;
+}
+
+input[type="range"]::-webkit-slider-thumb:active {
+    transform: scale(1.4);
+}
+
+input[type="text"] {
+    width: 90px;
+}
+
+.ColorPicker {
+    border: none;
+    height: 25px;
+    width: 90px;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+#partie_D {
+    float: right;
+    height: 100%;
+    width: 50%;
+}
+
+#conteneur_bouton_D {
+    overflow: hidden;
+    margin: 0px auto;
+    height: 11.5%;
+    width: 95%;
+    border-radius: 2px 2px 2px 2px;
+}
+
+#conteneur_bouton_niveaux {
+    float: left;
+    height: 100%;
+    width: 40%;
+}
+
+#conteneur_bouton_niveaux button {
+    height: 55%;
+    width: 35%;
+    margin-left: 16px;
+    margin-top: 25px;
+    border: none;
+    border-radius: 2px 2px 2px 2px;
+    font-family: Futura;
+    font-size: 21px;
+    color: white;
+    cursor: pointer;
+}
+
+#conteneur_bouton_niveaux button:hover {
+    box-shadow: 0px 4px 3px 1px rgb(49, 47, 47);
+}
+
+#conteneur_bouton_niveaux button:focus {
+    outline: none;
+}
+
+#conteneur_interface {
+    float: right;
+    height: 100%;
+    width: 60%;
+}
+
+#conteneur_interface_1 {
+    float: left;
+    width: 30%;
+}
+
+#conteneur_interface_2 {
+    float: right;
+    width: 70%;
+}
+
+#conteneur_interface img {
+    margin-left: 8%;
+    margin-top: 45px;
+    cursor: pointer;
+}
+
+svg {
+    height: 87%;
+    width: 95%;
+    margin-left: 23px;
+    background-color: #1C1C1C;
+    border-radius: 2px 2px 2px 2px;
+}
+
+/* -------------------------------------------- */
+/*          STYLE DE LA ZONE DE DESSIN          */
+/* -------------------------------------------- */
+
+svg#drawzone {
+    background-color: rgb(238,222,190);
+	height: 85%;
+    width: initial;
+}
+
+svg#drawzone > * {
+    cursor: pointer;
+    transform-origin: 50% 50%;
+    transition: transform 0.2s;
+}
+
+
+/* Cette classe sera portée par l'élément svg qui sera sélectionné */
+.selected {
+    stroke-width: 3px;
+    stroke: #ff0000;
+}
+
+/* -------------------------------------------- */
+/*             STYLE DE Code Mirror             */
+/* -------------------------------------------- */
+
+.Codemirror {
+	height: 636px;
+	margin-left: 3%;
+}
+
+/* -------------------------------------------- */
+/*                   POP-UP                     */
+/* -------------------------------------------- */
+
+.popUp {
+    display: none;
+    position: absolute;
+    overflow: hidden;
+    z-index: 2;
+    top: 145px;
+    left: 34.2%;
+    height: 500px;
+    width: 600px;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.popUp p {
+    padding: 74px;
+    margin-top: 30px;
+    text-align: justify;
+    font-size: 24px;
+    font-family: Futura;
+    color: white;
+}
+
+#popUp_reload p {
+    margin-top: 100px;
+}
+
+.popUp button {
+    height: 50px;
+    width: 250px;
+    margin-left: 33px;
+    cursor: pointer;
+    border: none;
+    border-radius: 2px;
+    font-family: Futura;
+    font-size: 20px;
+    color: white;
+}
+
+.close_popUp {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+#codinsky {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    height: 200px;
+}
+
+#quitter {
+    background-color: #f44336;
+}
+
+#quitter:hover {
+    box-shadow: 0px 0px 6px 2px #f44336;
+}
+
+#quitter:focus {
+    outline: none;
+}
+
+#annuler {
+    background-color: #4CAF50;
+}
+
+#annuler:hover {
+    box-shadow: 0px 0px 6px 2px #4CAF50;
+}
+
+#annuler:focus {
+    outline: none;
+}
+
+#popUp_tableaux {
+    position: absolute;
+    display: none;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    border-radius: 2px;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+#popUp_tableaux section {
+    margin: 80px auto;
+    width: 1040px;
+}
+
+#popUp_tableaux figure {
+    margin: 0px;
+}
+
+.popUp_niveau {
+    display: none;
+    overflow: hidden;
+    position: absolute;
+    z-index: 5;
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    background-color: #485159;
+}
+
+
+/* -------------------------------------------- */
+/*                 MEDIA QUERIES                */
+/* -------------------------------------------- */
+
+@media only screen and (max-width: 1440px) {
+    
+    #page_acceuil video {
+        height: 100%;
+    }
+    
+    #page_acceuil figure {
+        left: 5%;
+    }
+    
+    #page_acceuil p {
+        top: 60%;
+        left: 24%;
+    }
+    
+    #page_acceuil button {
+        left: 43%;
+    }
+    
+    #acceuil_global video {
+        height: 100%;   
+    }
+    
+    #acceuil figure {
+        margin-left: 23%;
+    }
+    
+    #acceuil select {
+        margin-left: 12%;
+    }
+    
+    #boutonSuivant {
+        bottom: 4px;
+    }
+    
+    #acceuil2 {
+        top: 350px;
+    }
+    
+    #acceuil2 .niv_1 {
+        margin-left: 31%;
+    }
+    
+    .container-dots {
+        display: none;
+    }
+    
+    #conteneur_bouton_G img {
+        margin-top: 10px;
+        margin-left: 16%;
+    }
+    
+    table {
+        margin-left: 10%;
+    }
+    
+    svg {
+        margin-left: 19px;
+    }
+    
+    textarea {
+        margin-left: 20px;
+    }
+    
+    #conteneur_interface img {
+        margin-top: 36px;
+        margin-left: 6%;
+    }
+    
+    #conteneur_logo img {
+        margin-top: 5px;
+    }
+    
+    #conteneur_bouton_niveaux button {
+        font-size: 16px;
+    }
+    
+    .popUp {
+        left: 29.3%;
+    }
+}
+
+@media only screen and (max-width: 1366px) {
+    
+    #page_acceuil video {
+        height: 100.5%;
+    }
+    
+    #page_acceuil figure {
+        left: 5%;
+    }
+    
+    #page_acceuil p {
+        left: 22%;
+    }
+    
+    #page_acceuil button {
+        left: 42%;
+    }
+    
+    #acceuil_global video {
+        height: 100%;   
+    }
+    
+    #acceuil figure {
+        margin-top: 10%;
+    }
+    
+    #acceuil_global #sponso {
+        bottom: 25px;
+    }
+    
+    #boutonSuivant {
+        bottom: 25px;
+    }
+    
+    #conteneur_interface img {
+        margin-left: 4%;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    
+    #page_acceuil figure {
+        left: 0%;
+    }
+    
+    #page_acceuil figure img {
+        height: 656px;
+        width: 1068px;
+    }
+    
+    #page_acceuil p {
+        top: 55%;
+        left: 12%;
+    }
+    
+    #page_acceuil button {
+        left: 40%;
+    }
+    
+    #acceuil figure {
+        margin-top: 20%;
+        margin-left: 12%;
+    }
+    
+    #acceuil select {
+        margin-left: 6%;
+    }
+    
+    #acceuil_global #sponso {
+        bottom: 0px;
+    }
+    
+    .popup_apropos .photos {
+        margin: 100px 20px;
+    }
+    
+    #boutonSuivant {
+        bottom: 4px;
+    }
+    
+    #acceuil2 {
+        top: 325px;
+    }
+    
+    #acceuil2 p {
+        margin-left: 34%;
+    }
+    
+    #acceuil2 span {
+        margin-left: 29%;
+    }
+    
+    #acceuil2 .niv_1 {
+        margin-left: 24%;
+    }
+    
+    .niv_1 {
+        margin-left: 24%;
+    }
+    
+    #index {
+        left: 13px;
+    }
+    
+    table {
+        margin-left: 6%;
+    }
+    
+    #conteneur_interface img {
+        margin-left: 2%;
+    }
+    
+    #conteneur_bouton_G img {
+        margin-left: 14%;
+    }
+    
+    #conteneur_bouton_niveaux button {
+        font-size: 12px;
+    }
+    
+    svg {
+        margin-left: 13px;
+    }
+    
+    textarea {
+        margin-left: 12px;
+    }
+    
+    .popUp {
+        left: 20.8%;
+    }
+}

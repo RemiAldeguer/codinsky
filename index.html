@@ -1,0 +1,718 @@
+<!doctype html>
+
+<html class="no-js" lang="fr">
+
+    <head>
+
+        <meta charset="UTF-8">
+
+        <link rel="icon" href="../img/codinsky_icone.png"/>
+
+        <title> CODINSKY </title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="application/styles.css" media="all">
+        <link rel="stylesheet" href="application/carousel.css" media="all">
+		<link rel="stylesheet" href="codemirror/codemirror.css" media="all">
+		<link rel="stylesheet" href="codemirror/icecoder.css" media="all">
+		<link rel="stylesheet" href="codemirror/icecoder.css" media="all">
+
+        <script type="text/javascript" src="externe/jquery-3.1.1.js"></script>
+
+        <script type="text/javascript" src="externe/colorPicker.js"></script>
+		<script type="text/javascript" src="application/d3.v4.min.js"></script>
+        <script type="text/javascript" src="application/script.js"></script>
+		<script src="codemirror/codemirror.js"></script>
+		<script src="codemirror/javascript.js"></script>
+
+    </head>
+
+    <body>
+        
+        <div id="page_acceuil">
+            
+            <video autoplay loop>
+                
+                <source src="img/FOND_CODINSKY.mp4" type="video/mp4">
+                
+            </video>
+            
+            <div class="container_language">
+                
+                <img id="fra" src="img/francais.png">
+                
+                <img id="eng" src="img/anglais.png">
+                
+            </div>
+            
+            <figure>
+                
+                <img src="img/LOGO_ENTIER_GIF.gif">
+            
+            </figure>
+            
+            <p> Apprends le code informatique avec les oeuvres de Kandinsky ! </p>
+            
+            <button> JOUER </button>
+        
+        </div>
+
+        <div id="acceuil_global">
+            
+            <video autoplay loop>
+                
+                <source src="img/kandinsky.mp4" type="video/mp4">
+                
+            </video>
+
+            <div id="acceuil">
+
+                <figure>
+
+                    <img src="img/LOGO_ACCEUIL.png">
+
+                </figure>
+
+                <section>
+
+                    <span>Avant de commencer...</span>
+
+                </section>
+
+                <section>
+
+                    <select id="ages">
+
+                        <option id="ages0" value="" style="color: grey;">Votre âge... </option>
+
+                        <option id="ages1" value="0">2 - 10 ans </option>
+
+                        <option id="ages2" value="2">11 - 17 ans </option>
+
+                        <option id="ages3" value="3">18  - 35 ans </option>
+
+                        <option id="ages4" value="2">36 - 65 ans </option>
+
+                        <option id="ages5" value="1">65 ou plus... </option>
+
+                    </select>
+
+                    <select id="categ">
+
+                        <option id="categ0" value="" style="color: grey;">Votre situation... </option>
+
+                        <option id="categ1" value="1">Ecolier </option>
+
+                        <option id="categ2" value="2">Collégien - Lycéen </option>
+
+                        <option id="categ3" value="3">Etudiant </option>
+
+                        <option id="categ4" value="2">Travailleur </option>
+
+                        <option id="categ5" value="1">Retraité </option>
+
+                        <option id="categ6"value="1">Autres... </option>
+
+                    </select>
+
+                    <select id="cpts">
+
+                        <option id="cpts0" value="" style="color: grey;">Votre niveau en code... </option>
+
+                        <option id="cpts1" value="0">Aucunes notions </option>
+
+                        <option id="cpts2" value="1">Amateur </option>
+
+                        <option id="cpts3" value="5">Intermédiaire </option>
+
+                        <option id="cpts4"value="6">Confirmé </option>
+
+                    </select>
+
+                </section>
+
+                <img id="boutonSuivant" src="img/flecheD.png">
+
+            </div>
+
+            <div id="acceuil2">
+
+                <p>Nous vous conseillons le niveau : </p>
+
+                <button class="niv_1">Amateur </button>
+
+                <button class="niv_2">Confirmé </button>
+
+            </div>
+            
+            <figure id="sponso">
+            
+                <img src="img/pompidou.png">
+                
+                <img src="img/upem.png">
+                
+                <img id="apropos" src="img/lama_icone.png">
+                
+            </figure>
+
+        </div>
+
+        <div id="conteneur">
+
+            <div id="partie_G">
+
+                <div id="conteneur_logo">
+
+                    <img src="img/logo_new.png">
+
+                </div>
+
+                <div id="index">
+
+                    <figure>
+
+                        <img src="img/arrow_down.png">
+
+                    </figure>
+
+                    <div id="index_content_1">
+
+                        <ul>
+                            
+                            <li id="index1">Creer un carré :</li>
+
+                            <li id="index2">Creer un rond :</li>
+
+                            <li id="index3">Creer un triangle :</li>
+
+                            <li id="index4">Creer un trait :</li>
+                            
+                        </ul>
+
+                        <ul class="fonction_index">
+                            
+                            <li>carre()</li>
+
+                            <li>rond()</li>
+
+                            <li>triangle()</li>
+
+                            <li>trait()</li>
+                            
+                        </ul>
+
+                    </div>
+
+                    <div id="index_content_2">
+
+                        <ul>
+                            
+                            <li id="index5">Couleur :</li>
+                            
+                            <li id="index6">Exemples :</li>
+                            
+                            <li id="index7">Blanc :</li>
+                            
+                            <li id="index8" style="color: grey">Noir :</li>                            
+
+                            <li id="index9" style="color: red">Rouge :</li>
+
+                            <li id="index10" style="color: green">Vert :</li>
+
+                            <li id="index11" style="color: blue;">Bleu :</li>
+
+                        </ul>
+
+                        <ul class="fonction_index">
+                            
+                            <li id="index12">entre 0 et 255 / Transparence entre 0 et 1</li>
+                            
+                            <li id="index13">rgba(rouge,vert,bleu,transparence)</li>
+                            
+                            <li>rgba(255,255,255,1);</li>
+
+                            <li>rgba(0,0,0,1);</li>
+
+                            <li>rgba(255,0,0,1);</li>
+
+                            <li>rgba(0,255,0,1);</li>
+
+                            <li>rgba(0,0,255,1);</li>
+                            
+                        </ul>
+
+                    </div>
+
+                </div>
+
+                <textarea id="script"></textarea>
+
+                <div id="conteneur_bouton_G">
+
+                    <img id="carre" src="img/carre.png" title="Créer un carré">
+
+                    <img id="rond" src="img/rond.png" title="Créer un rond">
+
+                    <img id="triangle" src="img/triangle.png" title="Créer un triangle">
+
+                    <img id="trait" src="img/trait.png" title="Créer un trait">
+
+                </div>
+
+                <div id="conteneur_table">
+
+                    <table>
+
+                        <tr>
+
+                            <th id="label_1">Hauteur </th>
+
+                            <th id="label_2">Largeur </th>
+
+                            <th id="label_3">Position X </th>
+
+                            <th id="label_4">Position Y </th>
+
+                        </tr>
+
+                        <tr>
+
+                            <tr>
+
+							<td>
+								<input type="range" min="0" max="1000" step="1" value="0" id="rangeTaille">
+							</td>
+
+							<td>
+								<input type="range" min="0" max="1000" step="1" value="0" id="rangeEpaisseur">
+							</td>
+
+							<td>
+								<input type="range" min="0" max="1000" step="1" value="0" id="rangePosX">
+							</td>
+
+							<td>
+								<input type="range" min="0" max="1000" step="1" value="0" id="rangePosY">
+							</td>
+
+						</tr>
+
+                        </tr>
+
+                        <tr>
+
+                            <th id="label_5">Rotation </th>
+
+                            <th id="label_6">Bordure </th>
+
+                            <th id="label_7">Couleur </th>
+                            
+<!--                            <th>Textures </th>-->
+
+                        </tr>
+
+                        <tr>
+
+                            <td>
+								<input type="range" min="0" max="360" step="1" value="0" id="rangeRotation">
+							</td>
+
+                            <td>
+								<input type="range" min="0" max="30" step="1" value="0" id="rangeBordure">
+							</td>
+
+                            <td>
+								<input id="tbColor" value="rgb(244, 67, 54)" readonly/>
+							</td>
+                            
+                            <td>
+                                
+<!--                                <button id="textureBouton"> </button>-->
+                                
+                            </td>
+
+                        </tr>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+            <div id="partie_D">
+
+                <div id="conteneur_bouton_D">
+
+                    <div id="conteneur_bouton_niveaux">
+
+                        <button class="niv_1"> Amateur </button>
+
+                        <button class="niv_2"> Confirmé </button>
+
+                    </div>
+
+                    <div id="conteneur_interface">
+                        
+                        <div id="conteneur_interface_1">
+                            
+                            <img id="tableaux" src="img/tableaux.png" title="Tableaux de Kandinsky">
+                            
+                            <img id="anecdote" src="img/anecdote.png" title="Anecdotes de Kandinsky">
+                        
+                        </div>
+                        
+                        <div id="conteneur_interface_2">
+                            
+                            <img src="img/retour.png" title="Supprimer dernière forme" id="retour">
+
+                            <img src="img/rafraichir.png" title="Supprimer toutes les formes" id="rafraichir">
+                            
+                            <img id="save" src="img/enregistrer.png" title="Enregistrer">
+
+                            <img id="close" src="img/quitter.png" title="Quitter l'application">
+                            
+                        </div>
+
+                    </div>
+					
+					
+
+                </div>
+				<svg id="drawzone" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" height="600px" width="97%">
+				</svg>
+
+            </div>
+
+        </div>
+    
+        <div class="popup_apropos">
+            <img class="close_popUp" src="img/quitter.png">
+            
+            <center> <h1> A PROPOS </h1> </center>
+        
+        
+            <center>
+
+                <div class="container_photos">
+
+                    <div class="photos">
+                        <img src="img/louise.jpg">
+                        <span> Louise VAISSAIRE </span>
+                        <span> Chef de Projet </span>
+                    </div>
+
+                    <div class="photos">
+                        <img src="img/jouneyd.jpg">
+                        <span> Jouneyd SIDI YEKHLEF </span>
+                        <span> Web Designer </span>
+                    </div>
+
+                    <div class="photos">
+                        <img src="img/remi.jpg">
+                        <span> Rémi ALDEGUER </span>
+                        <span> Développeur Web </span>
+                    </div>
+
+                    <div class="photos">
+                        <img src="img/romain.jpg">
+                        <span> Romain LHOPITAULT </span>
+                        <span> Développeur Web </span>
+                    </div>
+
+                </div>
+
+            </center>
+        
+        
+            <center>
+                <p id="apropos_descr">L'agence LAMA vous présente son application Codinsky. Un jeu éducatif pour les petits et les grands. L'application a pour but d'apprendre le code informatique par le biais des oeuvres de Kandinsky tout en s'amusant. Cette application a été créée à l'occasion de la "Fête du code" qui a eu lieu au Centre Pompidou. La création de cette application a été réalisé par 4 étudiants de Licence Professionnelle Conception Rédaction et Réalisation Web à l'UPEM (voir ci-dessus).</p>
+            </center>
+        </div>
+        
+        <div class="popUp" id="popUp_tableaux">
+            
+            <img class="close_popUp" src="img/quitter.png">
+            
+            <!-- --- -->
+            <!-- TAB -->
+            <!-- --- -->
+            <div class="carousel">
+                
+                <div class="slideshowTab">
+
+                    <div class="mySlidesTab fadeTab">
+                        <div class="numbertextTab">1 / 5</div>
+                        <center><img src="img/Oeuvres/1.jpg" style="width:70%"></center>
+                        <div class="textTab">TEST 1</div>
+                    </div>
+
+                    <div class="mySlidesTab fadeTab">
+                        <div class="numbertextTab">2 / 5</div>
+                        <center><img src="img/Oeuvres/2.jpg" style="width:100%"></center>
+                        <div class="textTab">TEST 2</div>
+                    </div>
+
+                    <div class="mySlidesTab fadeTab">
+                        <div class="numbertextTab">3 / 5</div>
+                        <center><img src="img/Oeuvres/3.jpg" style="width:100%"></center>
+                        <div class="textTab">TEST 3</div>
+                    </div>
+
+                    <div class="mySlidesTab fadeTab">
+                        <div class="numbertextTab">4 / 5</div>
+                        <center><img src="img/Oeuvres/4.jpg" style="width:70%"></center>
+                        <div class="textTab">TEST 4</div>
+                    </div>
+
+                    <div class="mySlidesTab fadeTab">
+                        <div class="numbertextTab">5 / 5</div>
+                        <center><img src="img/Oeuvres/5.jpg" style="width:70%"></center>
+                        <div class="textTab">TEST 5</div>
+                    </div>
+                    </div>
+
+                    <a class="prevTab" onclick="plusSlidesTab(-1)">&#10094;</a>
+                    <a class="nextTab" onclick="plusSlidesTab(1)">&#10095;</a>
+
+                </div>
+                <br>
+
+                <div class="container-dots" style="text-align:center">
+                    <span class="dotTab" onclick="currentSlideTab(1)"></span> 
+                    <span class="dotTab" onclick="currentSlideTab(2)"></span> 
+                    <span class="dotTab" onclick="currentSlideTab(3)"></span>
+                    <span class="dotTab" onclick="currentSlideTab(4)"></span> 
+                    <span class="dotTab" onclick="currentSlideTab(5)"></span> 
+                    <span class="dotTab" onclick="currentSlideTab(6)"></span> 
+                </div>
+            
+            </div>
+
+        </div>
+
+        <div class="popUp" id="popUp_anecdote">
+
+            <img class="close_popUp" src="img/quitter.png">
+
+            <p> </p>
+
+            <img id="codinsky" src="img/codinsky.png">
+
+        </div>
+
+        <div class="popUp" id="popUp_reload">
+
+            <p>VOULEZ-VOUS QUITTER L'EXERCICE ? </p>
+
+            <button id="quitter">Quitter </button>
+
+            <button id="annuler">Annuler </button>
+
+        </div>
+
+        <div class="popUp_niveau" id="popUp_niveau_facile">
+
+            <img class="close_popUp" src="img/quitter.png">
+
+            <!-- ------ -->
+            <!-- FACILE -->
+            <!-- ------ -->
+            
+            <div class="carousel">
+                
+                <div class="slideshowFacile">
+
+                    <div class="mySlidesFacile fadeFacile">
+                        <div class="numbertextFacile">1 / 5</div>
+                        <center><img id="imgF1" src="img/Slider/facile1.png" style="width:100%"></center>
+                    </div>
+
+                    <div class="mySlidesFacile fadeFacile">
+                        <div class="numbertextFacile">2 / 5</div>
+                        <center><img id="imgF2" src="img/Slider/facile2.png" style="width:100%"></center>
+                    </div>
+
+                    <div class="mySlidesFacile fadeFacile">
+                        <div class="numbertextFacile">3 / 5</div>
+                       <center><img id="imgF3" src="img/Slider/facile3.png" style="width:100%"></center>
+                    </div>
+
+                    <div class="mySlidesFacile fadeFacile">
+                        <div class="numbertextFacile">4 / 5</div>
+                        <center><img id="imgF4" src="img/Slider/facile4.png" style="width:100%"></center>
+                    </div>
+
+                    <div class="mySlidesFacile fadeFacile">
+                        <div class="numbertextFacile">5 / 5</div>
+                        <center><img id="imgF5" src="img/Slider/facile5.png" style="width:100%"></center>
+                    </div>
+
+                    <a class="prevFacile" onclick="plusSlidesFacile(-1)">&#10094;</a>
+                    <a class="nextFacile" onclick="plusSlidesFacile(1)">&#10095;</a>
+
+                </div>
+                <br>
+
+                <div class="container-dots" style="text-align:center">
+                    <span class="dotFacile" onclick="currentSlideFacile(1)"></span> 
+                    <span class="dotFacile" onclick="currentSlideFacile(2)"></span> 
+                    <span class="dotFacile" onclick="currentSlideFacile(3)"></span> 
+                    <span class="dotFacile" onclick="currentSlideFacile(4)"></span> 
+                    <span class="dotFacile" onclick="currentSlideFacile(5)"></span> 
+                </div>
+            
+            </div>
+
+        </div>
+
+        <div class="popUp_niveau" id="popUp_niveau_difficile">
+
+            <img class="close_popUp" src="img/quitter.png">
+
+            <!-- --------- -->
+            <!-- DIFFICILE -->
+            <!-- --------- -->
+            
+            <div class="carousel">
+                
+                <div class="slideshowDif">
+
+                    <div class="mySlidesDif fadeDif">
+                        <div class="numbertextDif">1 / 6</div>
+                        <center><img id="imgD1" src="img/Slider/difficile1.png" style="width:100%"></center>
+                    </div>
+
+                    <div class="mySlidesDif fadeDif">
+                        <div class="numbertextDif">2 / 6</div>
+                        <center><img id="imgD2" src="img/Slider/difficile2.png" style="width:100%"></center>
+                    </div>
+
+                    <div class="mySlidesDif fadeDif">
+                        <div class="numbertextDif">3 / 6</div>
+                        <center><img id="imgD3" src="img/Slider/difficile3.png" style="width:100%"></center>
+                    </div>
+
+                    <div class="mySlidesDif fadeDif">
+                        <div class="numbertextDif">4 / 6</div>
+                        <center><img id="imgD4" src="img/Slider/difficile4.png" style="width:100%"></center>
+                    </div>
+                    
+                    <div class="mySlidesDif fadeDif">
+                        <div class="numbertextDif">5 / 6</div>
+                        <center><img id="imgD5" src="img/Slider/difficile5.png" style="width:100%"></center>
+                    </div>
+                    
+                    <div class="mySlidesDif fadeDif">
+                        <div class="numbertextDif">6 / 6</div>
+                        <center><img id="imgD6" src="img/Slider/difficile6.png" style="width:100%"></center>
+                    </div>
+
+                    <a class="prevDif" onclick="plusSlidesDif(-1)">&#10094;</a>
+                    <a class="nextDif" onclick="plusSlidesDif(1)">&#10095;</a>
+
+                </div>
+                <br>
+
+                <div class="container-dots" style="text-align:center">
+                    <span class="dotDif" onclick="currentSlideDif(1)"></span> 
+                    <span class="dotDif" onclick="currentSlideDif(2)"></span> 
+                    <span class="dotDif" onclick="currentSlideDif(3)"></span> 
+                    <span class="dotDif" onclick="currentSlideDif(4)"></span>
+                    <span class="dotDif" onclick="currentSlideDif(5)"></span>
+                    <span class="dotDif" onclick="currentSlideDif(6)"></span>
+                </div>
+
+                </div>
+
+        </div>
+
+    </body>
+
+    <script>
+        /* ----------------------- TAB ----------------------- */
+        var slideIndexTab = 1;
+        showSlidesTab(slideIndexTab);
+
+        function plusSlidesTab(n) {
+            showSlidesTab(slideIndexTab += n);
+        }
+
+        function currentSlideTab(n) {
+            showSlidesTab(slideIndexTab = n);
+        }
+
+        function showSlidesTab(n) {
+            var i;
+            var slidesTab = document.getElementsByClassName("mySlidesTab");
+            var dotsTab = document.getElementsByClassName("dotTab");
+            if (n > slidesTab.length) {slideIndexTab = 1}    
+            if (n < 1) {slideIndexTab = slidesTab.length}
+            for (i = 0; i < slidesTab.length; i++) {
+            slidesTab[i].style.display = "none";  
+            }
+            for (i = 0; i < dotsTab.length; i++) {
+            dotsTab[i].className = dotsTab[i].className.replace(" activeTab", "");
+            }
+            slidesTab[slideIndexTab-1].style.display = "block";  
+            dotsTab[slideIndexTab-1].className += " activeTab";
+        }
+        
+        /* ----------------------- Facile ----------------------- */        
+        var slideIndexFacile = 1;
+        showSlidesFacile(slideIndexFacile);
+
+        function plusSlidesFacile(n) {
+            showSlidesFacile(slideIndexFacile += n);
+        }
+
+        function currentSlideFacile(n) {
+            showSlidesFacile(slideIndexFacile = n);
+        }
+
+        function showSlidesFacile(n) {
+            var i;
+            var slidesFacile = document.getElementsByClassName("mySlidesFacile");
+            var dotsFacile = document.getElementsByClassName("dotFacile");
+            if (n > slidesFacile.length) {slideIndexFacile = 1}    
+            if (n < 1) {slideIndexFacile = slidesFacile.length}
+            for (i = 0; i < slidesFacile.length; i++) {
+            slidesFacile[i].style.display = "none";  
+            }
+            for (i = 0; i < dotsFacile.length; i++) {
+            dotsFacile[i].className = dotsFacile[i].className.replace(" activeFacile", "");
+            }
+            slidesFacile[slideIndexFacile-1].style.display = "block";  
+            dotsFacile[slideIndexFacile-1].className += " activeFacile";
+        }
+        
+        /* ----------------------- Difficile ----------------------- */
+        var slideIndexDif = 1;
+        showSlidesDif(slideIndexDif);
+
+        function plusSlidesDif(n) {
+            showSlidesDif(slideIndexDif += n);
+        }
+
+        function currentSlideDif(n) {
+            showSlidesDif(slideIndexDif = n);
+        }
+
+        function showSlidesDif(n) {
+            var i;
+            var slidesDif = document.getElementsByClassName("mySlidesDif");
+            var dotsDif = document.getElementsByClassName("dotDif");
+            if (n > slidesDif.length) {slideIndexDif = 1}    
+            if (n < 1) {slideIndexDif = slidesDif.length}
+            for (i = 0; i < slidesDif.length; i++) {
+            slidesDif[i].style.display = "none";  
+            }
+            for (i = 0; i < dotsDif.length; i++) {
+            dotsDif[i].className = dotsDif[i].className.replace(" activeDif", "");
+            }
+            slidesDif[slideIndexDif-1].style.display = "block";  
+            dotsDif[slideIndexDif-1].className += " activeDif";
+        }
+    </script>
+
+</html>
