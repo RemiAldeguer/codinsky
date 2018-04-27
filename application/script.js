@@ -12,6 +12,21 @@ $(document).ready(function() {
     /*                  Pour Code Mirro                    */
     /* --------------------------------------------------- */
 
+	// Create a unique ID for the new circle e.g. rond_[NUMBER/HASH]
+	function getUniqueID(shape) {
+		return shape + "_" + parseInt(Math.random() * Date.now());
+	}
+	/**
+	* Creates and adds the shape in shapes object
+	*
+	* @param {"rond" | "rect" | "trait" | "triangle"} shapeType 
+	* @param {{ [key: string]: string | number }} properties 
+	*/
+
+	function addShape(shapeId, properties) {
+		shapes[shapeId] = properties;
+	}
+
     var textArea = $('textarea#script')[0], // facile
         cmConfig = {
             mode: "text/javascript",
@@ -767,6 +782,7 @@ $(document).ready(function() {
 			.attr('fill', tbColor)
 			.attr('stroke', "black")
 			.attr('stroke-width',1)
+			.attr('id', getUniqueID())
 			.classed('selected', true);
 
 		afficher_cc();
@@ -841,8 +857,7 @@ $(document).ready(function() {
 				break;
 		}
 
-    }
-
+	}
 
 	function afficher_cc_cercle() {
 		var selectedElement = $svg.find('.selected');
@@ -853,74 +868,129 @@ $(document).ready(function() {
 		var cm_s = selectedElement.attr('stroke-width');
 		var cm_color = selectedElement.attr('fill');
 
-		myCodeMirror.setValue('rond(){\n'+
+		// append it to the shapes object
+		var shapeId = getUniqueID("rond");
+		addShape(shapeId, {
+			position_x: cm_cx,
+			position_y: cm_cy,
+			rayon: cm_r,
+			bordure: cm_s,
+			couleur: cm_color,
+		});
+
+		var newCode = shapeId + '(){\n'+
 			'\t Position x:' + cm_cx + ';\n'+
 			'\t Position y:' + cm_cy + ';\n'+
 			'\t Rayon:' + cm_r + ';\n' +
 			'\t Bordure:' + cm_s + ';\n' +
-			'\t Couleur:' +cm_color+ '\n;}'
-		);
+			'\t Couleur:' +cm_color+ ';\n}';
 
+		myCodeMirror.setValue(myCodeMirror.getValue() + "\n" + newCode);
 	}
 
 	function afficher_cc_rect() {
-		var cm_x = $svg.find('.selected').attr('x');
-		var cm_y = $svg.find('.selected').attr('y');
-		var cm_h = $svg.find('.selected').attr('height');
-		var cm_l = $svg.find('.selected').attr('width');
-		var cm_a = $svg.find('.selected').attr('angle');
-		var cm_s = $svg.find('.selected').attr('stroke-width');
-		var cm_color = $svg.find('.selected').attr('fill');
-		myCodeMirror.setValue('carre(){\n'+
-							  '\t Position x :' + cm_x + ';\n'+
-							  '\t Position y :' + cm_y + ';\n'+
-							  '\t Hauteur :' + cm_h + ';\n'+
-							  '\t Largeur :' + cm_l + ';\n'+
-							  '\t Bordure :' + cm_s + ';\n'+
-							  '\t Angle :'+ cm_a +'; \n'+
-							  '\t Couleur :' +cm_color+ ';}'
-							 );
+		var selectedElement = $svg.find('.selected');
+
+		var cm_x = selectedElement.attr('x');
+		var cm_y = selectedElement.attr('y');
+		var cm_h = selectedElement.attr('height');
+		var cm_l = selectedElement.attr('width');
+		var cm_a = selectedElement.attr('angle');
+		var cm_s = selectedElement.attr('stroke-width');
+		var cm_color = selectedElement.attr('fill');
+
+		// append it to the shapes object
+		var shapeId = getUniqueID("rect");
+		addShape(shapeId, {
+			position_x: cm_x,
+			position_y: cm_y,
+			height: cm_h,
+			width: cm_l,
+			angle: cm_a,
+			stroke_width: cm_s,
+			couleur: cm_color,
+		});
+
+		var newCode = shapeId + '(){\n'+
+			'\t Position x :' + cm_x + ';\n'+
+			'\t Position y :' + cm_y + ';\n'+
+			'\t Hauteur :' + cm_h + ';\n'+
+			'\t Largeur :' + cm_l + ';\n'+
+			'\t Bordure :' + cm_s + ';\n'+
+			'\t Angle :'+ cm_a +'; \n'+
+			'\t Couleur :' +cm_color+ ';\n}';
+
+		myCodeMirror.setValue(myCodeMirror.getValue() + "\n" + newCode);
 	}
 
 
 
 	function afficher_cc_triangle() {
+		var selectedElement = $svg.find('.selected');
 
-		var cm_color = $svg.find('.selected').attr('fill');
-		var cm_s = $svg.find('.selected').attr('stroke-width');
-        var cm_tx = $svg.find('.selected').attr('tx');
-        var cm_ty = $svg.find('.selected').attr('ty');
-        var cm_l = $svg.find('.selected').attr('width');
-        var cm_a = $svg.find('.selected').attr('angle');
+		var cm_color = selectedElement.attr('fill');
+		var cm_s = selectedElement.attr('stroke-width');
+        var cm_tx = selectedElement.attr('tx');
+        var cm_ty = selectedElement.attr('ty');
+        var cm_l = selectedElement.attr('width');
+		var cm_a = selectedElement.attr('angle');
+		
+		// append it to the shapes object
+		var shapeId = getUniqueID("triangle");
+		addShape(shapeId, {
+			position_x: cm_tx,
+			position_y: cm_ty,
+			width: cm_l,
+			angle: cm_a,
+			stroke_width: cm_s,
+			couleur: cm_color,
+		});
 
-		myCodeMirror.setValue('triangle(){\n'+
+		var newCode = shapeId + '(){\n'+
+			'\t Position x :' + cm_tx +';\n'+
+			'\t Position y :' + cm_ty +';\n'+
+			'\t Largeur :' + cm_l + ';\n'+
+			'\t Angle :' + cm_a + ';\n'+
+			'\t Bordure :' + cm_s + ';\n'+
+			'\t Couleur :' +cm_color+ ';\n}';
 
-							  '\t Position x :' + cm_tx +';\n'+
-							  '\t Position y :' + cm_ty +';\n'+
-							  '\t Largeur :' + cm_l + ';\n'+
-							  '\t Angle :' + cm_a + ';\n'+
-							  '\t Bordure :' + cm_s + ';\n'+
-							  '\t Couleur :' +cm_color+ ';}'
-							 );
+		myCodeMirror.setValue(myCodeMirror.getValue() + "\n" + newCode);
 	}
 
 	function afficher_cc_trait() {
-		var cm_x = $svg.find('.selected').attr('x');
-		var cm_y = $svg.find('.selected').attr('y');
-		var cm_h = $svg.find('.selected').attr('height');
-		var cm_l = $svg.find('.selected').attr('width');
-        var cm_a = $svg.find('.selected').attr('angle');
-		var cm_s = $svg.find('.selected').attr('stroke-width');
-		var cm_color = $svg.find('.selected').attr('fill');
-		myCodeMirror.setValue('trait(){\n'+
-							  '\t Position x :' + cm_x + ';\n'+
-							  '\t Position y :' + cm_y + ';\n'+
-							  '\t Longueur :' + cm_h + ';\n'+
-							  '\t Bordure :' + cm_s + ';\n'+
-							  '\t Angle :'+ cm_a +'; \n'+
-							  '\t Couleur :' +cm_color+ ';}'
-							 );
-	}
+		var selectedElement = $svg.find('.selected')
+
+		var cm_x = selectedElement.attr('x');
+		var cm_y = selectedElement.attr('y');
+		var cm_h = selectedElement.attr('height');
+		var cm_l = selectedElement.attr('width');
+        var cm_a = selectedElement.attr('angle');
+		var cm_s = selectedElement.attr('stroke-width');
+		var cm_color = selectedElement.attr('fill');
+		
+
+		// append it to the shapes object
+		var shapeId = getUniqueID("trait");
+		addShape(shapeId, {
+			position_x: cm_x,
+			position_y: cm_y,
+			height: cm_h,
+			width: cm_l,
+			angle: cm_a,
+			stroke_width: cm_s,
+			couleur: cm_color,
+		});
+
+		var newCode =  shapeId + '(){\n'+
+				'\t Position x :' + cm_x + ';\n'+
+				'\t Position y :' + cm_y + ';\n'+
+				'\t Longueur :' + cm_h + ';\n'+
+				'\t Bordure :' + cm_s + ';\n'+
+				'\t Angle :'+ cm_a +'; \n'+
+				'\t Couleur :' +cm_color+';\n}'
+			;
+			myCodeMirror.setValue(myCodeMirror.getValue() + "\n" + newCode);
+		}
 
 	/* -------------------------------------------------------- */
 	/*     Evènements permettant de gérer les input range       */
@@ -938,7 +1008,8 @@ $(document).ready(function() {
 
 	var ID_forme;
 
-	myCodeMirror.on("change",function(){
+	myCodeMirror.on("change",function(a, changeObj){
+		console.log("CHANGE MOFO", changeObj)
 		if(Level == 1){
 			var code = myCodeMirror.getValue();
 			cm_regex_check_function(code); // va vérifier si la fonction est correcte puis va l'executer
@@ -964,7 +1035,7 @@ $(document).ready(function() {
 		var $clickedElement = $(this);
 		$svg.children().removeClass('selected');
 		$clickedElement.addClass('selected');
-		afficher_cc();
+		// afficher_cc();
 	});
 
 	$svg.on('click', 'rect', function() {
@@ -975,16 +1046,21 @@ $(document).ready(function() {
 		var $clickedElement = $(this);
 		$svg.children().removeClass('selected');
 		$clickedElement.addClass('selected');
-		afficher_cc();
+		// afficher_cc();
 	});
-
-
+ 
 	$svg.on('click', 'path', function() {
 		ID_forme = 2;
 		var $clickedElement = $(this);
 		$svg.children().removeClass('selected');
 		$clickedElement.addClass('selected');
-		afficher_cc();
+		// afficher_cc();
+	});
+
+	$svg.on('click', function(e) {
+		if (e.target.id === "drawzone") {
+			$svg.children().removeClass('selected');
+		}
 	});
 
   var tampon_d;
@@ -1344,7 +1420,6 @@ $(document).ready(function() {
 			.attr({
 			'fill' : rangeValue, // sera pris en compte si l'élément sélectionné est un carré <rect>
 		});
-		afficher_cc();
 	});
 
 	//=======================================================Rectangle========================================//
@@ -1356,7 +1431,6 @@ $(document).ready(function() {
 			.attr({
 			'x'  : rangeValue, // sera pris en compte si l'élément sélectionné est un carré <rect>
 		});
-		afficher_cc();
 	});
 
 	$posY.on('input change', function () {
@@ -1366,7 +1440,6 @@ $(document).ready(function() {
 			.attr({
 			'y'  : rangeValue, // sera pris en compte si l'élément sélectionné est un carré <rect>
 		});
-		afficher_cc();
 	});
 
 	$taille.on('input change', function () {
@@ -1376,7 +1449,6 @@ $(document).ready(function() {
 			.attr({
 			'height' : rangeValue, // sera pris en compte si l'élément sélectionné est un carré <rect>
 		});
-		afficher_cc();
 	});
 
 	$epaisseur.on('input change', function () {
@@ -1386,7 +1458,6 @@ $(document).ready(function() {
 			.attr({
 			'width' : rangeValue, // sera pris en compte si l'élément sélectionné est un carré <rect>
 		});
-		afficher_cc();
 	});
 
 	$bordure.on('input change', function () {
@@ -1396,7 +1467,6 @@ $(document).ready(function() {
 			.attr({
 			'stroke-width' : rangeValue,
 		});
-		afficher_cc();
 	});
 
 	$rotation.on('input change', function () {
@@ -1438,7 +1508,6 @@ $(document).ready(function() {
 			'cx' : rangeValue, // sera pris en compte si l'élément sélectionné est un cercle <circle>
 			//            'transform' : "translate(" + rangeValue + "," + $posY.val() + ")"
 		});
-		afficher_cc();
 	});
 
 	$posY.on('input change', function () {
@@ -1450,7 +1519,6 @@ $(document).ready(function() {
 			//           'transform' : "translate(" + $posX.val() + "," + rangeValue + ")"
 
 		});
-		afficher_cc();
 	});
 
 	$epaisseur.on('input change', function () {
@@ -1460,7 +1528,6 @@ $(document).ready(function() {
 			.attr({
 			'r'     : rangeValue, // sera pris en compte si l'élément sélectionné est un cercle <circle>
 		});
-		afficher_cc();
 	});
 
 	$bordure.on('input change', function () {
@@ -1470,7 +1537,6 @@ $(document).ready(function() {
 			.attr({
 			'stroke-width' : rangeValue,
 		});
-		afficher_cc();
 	});
 
 	//========================================================================================================//
@@ -1486,7 +1552,6 @@ $(document).ready(function() {
 			'transform' : "translate(" + rangeValue + "," + $posY.val() + ") rotate(" +$rotation.val()+ ")",
             'tx' : rangeValue,
 		});
-		afficher_cc();
 	});
 
 
@@ -1498,7 +1563,6 @@ $(document).ready(function() {
 			'transform' : "translate(" + $posX.val() + "," + rangeValue + ") rotate(" +$rotation.val()+ ")",
             'ty' : rangeValue,
 		});
-		afficher_cc();
 	});
 
 	$epaisseur.on('input change', function () {
@@ -1509,7 +1573,6 @@ $(document).ready(function() {
 			'd'     : d3.symbol().type(d3.symbolTriangle).size($epaisseur.val()*200),
             'width' : rangeValue,
 		});
-		afficher_cc();
 	});
 
 	$bordure.on('input change', function () {
@@ -1519,7 +1582,6 @@ $(document).ready(function() {
 			.attr({
 			'stroke-width' : rangeValue,
 		});
-		afficher_cc();
 	});
 
 	$rotation.on('input change', function () {
@@ -1529,7 +1591,6 @@ $(document).ready(function() {
 			.attr({
 			'transform' : "translate("+ $posX.val() + "," + $posY.val() + ") rotate("+rangeValue+")",
 		});
-		afficher_cc();
 	});
 
 	//========================================================================================================//
@@ -1542,7 +1603,6 @@ $(document).ready(function() {
 			'x1' : rangeValue, // sera pris en compte si l'élément sélectionné est un cercle <circle>
 			'x2' : rangeValue + 45, // sera pris en compte si l'élément sélectionné est un cercle <circle>
 		});
-		afficher_cc();
 	});
 
 
@@ -1555,6 +1615,5 @@ $(document).ready(function() {
 			'y1' : rangeValue, // sera pris en compte si l'élément sélectionné est un cercle <circle>
 			'y2' : rangeValue + 45, // sera pris en compte si l'élément sélectionné est un cercle <circle>
 		});
-		afficher_cc();
 	});
 });
